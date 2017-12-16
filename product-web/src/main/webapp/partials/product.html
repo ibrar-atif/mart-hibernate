@@ -1,0 +1,50 @@
+<div ng-controller="ProductController" >
+	<div class="content-wrapper">
+		<div>
+			<div>Add Product</div>
+			
+		<div>
+		<div>
+		<span>Name</span></div>
+		<span>
+		<input type="text" ng-model="newProduct.name"/>
+		<select ng-model="newProduct.type">
+		<option value="">Select</option>
+		<option value="ELECTRONIC">Electronic</option>
+		<option value="APPLIANCES">Appliances</option>
+		</select>
+		<input type="button" value="Add" ng-click="addProduct()" style="width: 78px; "/>
+		</span>
+		</div>
+		</div>
+		<br/><br/>
+		
+		<div>
+			<div>
+			Search
+			</div>
+			<div>
+				<select ng-model="searchType">
+					<option value="">Select</option>
+					<option value="ELECTRONIC">Electronic</option>
+					<option value="APPLIANCES">Appliances</option>
+				</select>
+				<input type="button" value="Search" ng-click="searchProduct()"/>
+			</div>
+			<table>
+				<thead>
+				<tr></tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="pr in productList">
+						<td>{{pr.name}}</td>
+						<td>{{pr.type}}</td>
+						<td><input type="button" value="Delete" ng-click="deleteProduct(pr)">
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>	
+	
+</div>	

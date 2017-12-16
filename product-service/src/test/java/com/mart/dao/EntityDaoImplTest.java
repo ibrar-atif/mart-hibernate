@@ -1,0 +1,36 @@
+package com.mart.dao;
+
+import javax.sql.DataSource;
+
+import org.dbunit.database.DatabaseDataSourceConnection;
+import org.dbunit.database.IDatabaseConnection;
+import org.dbunit.dataset.IDataSet;
+import org.dbunit.operation.DatabaseOperation;
+import org.junit.Before;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
+import org.testng.annotations.BeforeMethod;
+
+
+
+@ContextConfiguration(classes = { HibernateConfigTest.class })
+public abstract class EntityDaoImplTest extends AbstractTransactionalTestNGSpringContextTests {
+
+	 public EntityDaoImplTest() {
+		System.out.println("parent");
+	}
+	@Autowired
+	DataSource dataSource;
+
+	@Before
+	public void setUp() throws Exception {
+		IDatabaseConnection dbConn = new DatabaseDataSourceConnection(
+				dataSource);
+		DatabaseOperation.CLEAN_INSERT.execute(dbConn, getDataSet());
+	}
+	
+	protected abstract IDataSet getDataSet() throws Exception;
+
+}

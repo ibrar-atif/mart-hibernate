@@ -1,0 +1,60 @@
+header {
+	background: #2c3e50;
+	text-align: center;
+	color: #fff;
+	padding: 20px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	font-size: 18px;
+}
+
+body {
+	color: #fff;
+}
+
+footer {
+	background: #2c3e50;
+	text-align: center;
+	color: #fff;
+	padding: 20px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	font-size: 18px;
+}
+
+.container {
+	margin: 30px auto;
+}
+
+.content-wrapper {
+	margin: 20px auto;
+}
+
+.countries {
+	padding: 15px;
+	background: #d35400;
+}
+
+.states {
+	padding: 15px;
+	background: #27ae60;
+}
+
+.cities {
+	padding: 15px;
+	background: #1abc9c;
+}
+
+h1 {
+	font-size: 20px;
+	font-style: italic;
+}
+
+.companies {
+	padding: 15px;
+	background: #c0392b;
+}
