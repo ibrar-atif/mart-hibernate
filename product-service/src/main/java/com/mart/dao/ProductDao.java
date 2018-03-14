@@ -11,4 +11,6 @@ public interface ProductDao {
 	public List<Product> findByType(String type)throws Exception;
 
 	public Boolean deleteProductById(long id)throws Exception;
+
+	void addTestUser() throws Exception;
 }

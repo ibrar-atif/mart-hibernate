@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import com.mart.controller.ProductController;
 import com.mart.dao.ProductDao;
 import com.mart.dto.ProductDto;
 import com.mart.service.ProductService;
+import com.mart.service.impl.ProductServiceImpl;
 
 public class ProductControllerTest {
 
@@ -34,6 +36,7 @@ public class ProductControllerTest {
 	
 	 @Before
 	    public void setUp(){
+		
 	        MockitoAnnotations.initMocks(this);
 	        productList = getProducts();
 	    }

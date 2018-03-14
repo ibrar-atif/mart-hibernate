@@ -2,12 +2,16 @@ package com.mart.dto;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public class ProductDto implements Serializable{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@JsonIgnore
 	private long id;
 	private String name;
 	private String type;

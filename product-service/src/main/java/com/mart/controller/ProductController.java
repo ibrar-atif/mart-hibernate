@@ -2,10 +2,13 @@ package com.mart.controller;
 
 import java.util.List;
 
+import javax.servlet.annotation.MultipartConfig;
+
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +32,8 @@ public class ProductController {
 	public ResponseEntity<ProductDto> addProduct(@RequestBody  ProductDto productDto)throws Exception,HibernateException{
 		System.out.println("success");
 		productDto = productService.addProduct(productDto);
+		//if(productDto.getName())
+		//
 		return new ResponseEntity<ProductDto>(productDto,HttpStatus.OK);
 	}
 		
@@ -63,4 +68,14 @@ public class ProductController {
 		return new ResponseEntity<ErrorMsg>(error,HttpStatus.OK);
 
 	}
+
+	public ProductService getProductService() {
+		return productService;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
+	
+	
 }
